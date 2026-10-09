@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090914">
+  <meta name="description" content="Animevolt — discover anime-inspired editing clips and creator resources.">
+  <title>Animevolt — Clips for Creators</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Animevolt home"><span class="brand-mark">A<span>✦</span></span><span>ANIME<span class="brand-accent">VOLT</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a><a href="#clips">Explore clips</a><a href="#how">How it works</a>
+    </nav>
+    <a class="creator-button" href="#how">For creators <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> THE CREATOR'S CLIP LIBRARY</div>
+        <h1>Find your next<br><span class="gradient-text">edit-worthy</span> moment.</h1>
+        <p>Explore anime-inspired clips, discover new ideas, and build your next edit. Downloadable files should be shared only when the uploader has permission to distribute them.</p>
+        <div class="hero-actions"><a class="primary-button" href="#clips">Explore library <span>↘</span></a><a class="text-button" href="#how">How downloads work <span>→</span></a></div>
+        <div class="hero-stats"><div><strong>CREATOR</strong><span>FIRST</span></div><i></i><div><strong>FIND</strong><span>YOUR VIBE</span></div><i></i><div><strong>EDIT</strong><span>YOUR WAY</span></div></div>
+      </div>
+      <div class="hero-art" aria-label="Abstract anime-inspired artwork">
+        <div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div>
+        <div class="art-sun"></div><div class="art-slash slash-a"></div><div class="art-slash slash-b"></div>
+        <div class="art-label label-top">VOL. 01 <span>✦</span></div>
+        <div class="art-kanji">閃</div><div class="art-caption">POWER UP<br><span>YOUR NEXT EDIT</span></div>
+        <div class="art-index">AV / 001</div>
+      </div>
+    </section>
+
+    <section class="library-section" id="clips">
+      <div class="section-heading">
+        <div><div class="eyebrow">YOUR NEXT CUT STARTS HERE</div><h2>Explore the <span class="gradient-text">library.</span></h2></div>
+        <span class="clip-count" id="clip-count">06 COLLECTIONS</span>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search clips, moods, or tags…" aria-label="Search clips"><kbd>/</kbd></label>
+        <div class="filter-row" id="filters">
+          <button class="filter active" data-filter="All">All clips</button>
+          <button class="filter" data-filter="Action">Action</button>
+          <button class="filter" data-filter="Aura">Aura</button>
+          <button class="filter" data-filter="Emotional">Emotional</button>
+          <button class="filter" data-filter="Chill">Chill</button>
+        </div>
+      </div>
+      <div class="clip-grid" id="clip-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden><span>⌕</span><h3>No clips found</h3><p>Try a different search or category.</p></div>
+      <p class="library-note"><span>ⓘ</span> Demo library: these are original placeholder cards, not copyrighted anime footage. Add your own videos or files you have permission to redistribute.</p>
+    </section>
+
+    <section class="how-section" id="how">
+      <div class="how-title"><div class="eyebrow">SIMPLE. CREATOR-FRIENDLY.</div><h2>From discovery<br>to <span class="gradient-text">your next edit.</span></h2><p>Animevolt is a starter library for editors. Only publish clips that you created or have permission to share.</p></div>
+      <div class="steps">
+        <article class="step"><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Find your vibe</h3><p>Search by title, mood, or category to find a starting point for your edit.</p></article>
+        <article class="step"><span class="step-number">02</span><div class="step-icon">▷</div><h3>Preview the clip</h3><p>Check the video and read its usage notes before using it in a project.</p></article>
+        <article class="step"><span class="step-number">03</span><div class="step-icon">↧</div><h3>Download & create</h3><p>Download only when a real file and clear reuse permission are provided.</p></article>
+      </div>
+    </section>
+
+    <section class="submit-banner">
+      <div><div class="eyebrow">BUILD THE LIBRARY</div><h2>Got a clip you can share?</h2><p>Contribute original or properly licensed creator resources.</p></div>
+      <a class="primary-button" href="mailto:hello@animevolt.example?subject=Animevolt%20clip%20submission">Contact the team <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#"><span class="brand-mark">A<span>✦</span></span><span>ANIME<span class="brand-accent">VOLT</span></span></a><p>Made for editors. Share responsibly.</p><div><a href="#how">Usage notes</a><a href="mailto:hello@animevolt.example">Contact</a></div><small>© <span id="year"></span> Animevolt. Replace this demo contact before publishing.</small></footer>
+
+  <dialog class="clip-dialog" id="clip-dialog">
+    <button class="dialog-close" id="dialog-close" aria-label="Close preview">×</button>
+    <div class="dialog-video" id="dialog-video"><div class="dialog-placeholder"><span>▶</span><p>Preview placeholder</p></div></div>
+    <div class="dialog-info"><div class="eyebrow" id="dialog-category">CLIP DETAILS</div><h2 id="dialog-title">Clip title</h2><p id="dialog-description"></p><div class="dialog-meta" id="dialog-meta"></div><a class="primary-button disabled-button" id="dialog-download" href="#" download aria-disabled="true">Download unavailable <span>↧</span></a><p class="permission-note" id="dialog-permission"></p></div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
